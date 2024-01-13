@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+}
+
+
+/* nav res mediaquery */
+
+@media(max-width:750px){
+  .navmenu{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    height: 130vh;
+    background: #edfff1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 30px;
+    transition: all .42s ;
+  }
+  .navmenu a{
+    display: block;
+    margin: 18px 0;
+  }
+  .navmenu.open{
+    right: 0;
+  }
+  #menu-icon{
+    display: contents;
+  }
+}
+
+/* nav media */
+
+    
+.center-text h2{
+    color: #111;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.center-text span{
+    color: #ee1c47;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap:2rem ;
+}
+.row{
+    position: relative;
+    transition: all .40s;
+    
+}
+.row img{
+    width: 88%;
+    height: auto;
+    transition: all .40s;
+}
+.row img:hover{
+    transform: scale(0.9);
+}
+.product-text h5{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #27b737;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.heart-icon{
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+}
+.heart-icon:hover{
+    color: #ee1c47;
+}
+.ratting i{
+    color: #ff8c00;
+}
+.price h4{
+    color: #111;
+    font-size: 16px;
+    font-weight: 400;
+}
+.price p{
+    color: #151515;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+.ban-img img{
+    width: 99%;
+}
+
+@media (max-width:600px) {
+    .ban-img img{
+        width: 560px;
+    }
+    
+}
+
+/* nav style */
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10%;
+
+}
+.logo img{
+  max-width: 120px;
+  height: auto;
+}
+.navmenu{
+  display: flex;
+}
+.navmenu a{
+  color: #2c2c2c;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+.navmenu a:hover{
+  color: #ee1c47;
+}
+.nav-icon{
+  display: flex;
+  align-items: center;
+}
+.nav-icon i{
+  margin-right: 20px;
+  color: #2c2c2c;
+  font-size: 25px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+.nav-icon i:hover{
+  transform: scale(1.1);
+  color: #ee1c47;
+}
+#menu-icon{
+  font-size: 35px;
+  color: #2c2c2c;
+  cursor: pointer;
+  z-index: 10001;
+
+}
+/* 
+sticky nav items */
+header.sticky{
+  background: #fff;
+  padding: 20px 10%;
+  box-shadow: 0px 0px 10px rgb(0 0 0 /10%);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+/* footer section */
+.bn46 {
+  width: 150px;
+  height: 50px;
+}
+.bn45 {
+  width: 170px;
+  height: 50px;
+}
+.contact{
+  background-color: #f3f4f6;
+}
+.contact-info{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,auto));
+  gap: 3rem;
+}
+.first-info{
+  width: 140px;
+  height: auto;
+}
+.contact-info h4{
+  color: #212529;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.contact-info p{
+  color: #565656;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all .42s;
+}
+.contact-info p:hover{
+  color: #ee1c47;
+}
+.social-icon i{
+  color: #565656;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all .42s;
+}
+.social-icon i:hover{
+  transform: scale(1.3);
+}
+
+.left-col{
+  float: left;
+  margin-left: 7%;
+   margin-bottom: 240px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-col h4{
+  padding-bottom: 15px;
+}
+.left-col h1{
+  color: #088178;
+}
+.left-col button{
+  background-color: transparent;
+  color: #088178;
+  border: 0;
+  padding: 14px 80px 14px 65px;
+  font-weight: 700;
+  font-size: 15px;
+
+}
+
+
+/* 
+footer style */
+
+
+
+/* nav styel */
+
+
+</style>
+<body>
+    
+<!-- nav men -->
+<header class="sticky">
+    <a href="#" class="logo"><img src="./images/logo (1).png" alt=""></a>
+    <ul class="navmenu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="mens.html">men</a></li>
+        <li><a href="womens.html">womens</a></li>
+        <li><a href="kids.html">kids</a></li>
+        <li><a href="contact us.html">contact us</a></li>
+    </ul>
+    <div class="nav-icon">
+        <a href="#"><i class='bx bx-search'></i></a>
+        <a href="#"><i class='bx bx-user'></i></a>
+        <a href="#"><i class='bx bx-cart'></i></a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+</header>
+<br><br><br>
+ <!-- Swiper -->
+         
+         
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./images/banner_kids.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block custom-caption">
+              <div class="left-col">
+                <h4></h4>
+                <h2></h2>
+                <h1></h1>
+                <p></p>
+                    <button></button>
+              </div>
+            </div>
+          </div>
+
+      <div class="carousel-item">
+        <img src="./images/banner_mens.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="left-col">
+            <h4></h4>
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+                <button>s</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/banner_women.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="left-col">
+            <h4></h4>
+            <h2></h2>
+            <h1>on all products</h1>
+            <p></p>
+                <button></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!-- Swiper JS -->
+
+
+
+
+
+    <!-- nav men -->
+   
+ <section class="trending-products" id="trending">
+    <div class="center-text">
+        <h2>womens trending <span>product</span></h2>
+    </div>
+    <div class="products">
+        <div class="row">
+            <img src="./images/product_13.png" alt="">
+            <div class="product-text">
+                <h5>sale</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>half running set</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_14.png" alt="">
+            <div class="product-text">
+                <h5>new</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>formal men lowers</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_15.png" alt="">
+            
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>half running suit</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_16.png" alt="">
+            <div class="product-text">
+                <h5>hot</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>half  fancy lady dress</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_17.png" alt="">
+           
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>flix flow jeans</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_18.png" alt="">
+            <div class="product-text">
+                <h5>hot</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>fancy salwar suits</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_20.png" alt="">
+            <div class="product-text">
+                <h5>sale</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>printed straight kurta</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="./images/product_24.png" alt="">
+            <div class="product-text">
+                <h5>sale</h5>
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+
+            </div>
+            <div class="ratting">
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star-half'></i>
+            </div>
+
+            <div class="price">
+                <h4>collot full dress</h4>
+                <p>$88- $127</p>
+            </div>
+        </div>
+    </div>
+
+ </section>
+ <br>
+<!-- footer section -->
+
+ <!-- contact section -->
+ <footer class="contact">
+    <div class="contact-info">
+        <div class="first-info">
+            <img src="./images/logo (1).png" alt="">
+            <p>5465 newyork city <br>tx united states 647474</p>
+            <p>08564367896</p>
+            <p>david@gmail.com</p>
+
+            <div class="social-icon">
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-twitter'></i></a>
+                <a href=""><i class='bx bxl-instagram'></i></a>
+                <a href=""><i class='bx bxl-youtube'  ></i></a>
+                <a href=""><i class='bx bxl-linkedin' ></i></a>
+            </div>
+        </div>
+        <div class="second-info">
+            <h4>SUPPORT</h4>
+            <p>contact us</p>
+            <p>about page</p>
+            <p>size guide</p>
+            <p>shopping$ return</p>
+            <p>privacy</p>
+        </div>
+        <div class="third-info">
+            <h4>SHOP</h4>
+            <p>mens shop</p>
+            <p>womens shopping</p>
+            <p>discount</p>
+            <p>free product</p>
+        </div>
+        <div class="fourth-info">
+            <h4>COMPONY</h4>
+            <p>about</p>
+            <p>blog</p>
+            <p>affliate</p>
+            <p>login</p>
+        </div>
+        <div class="five">
+            <h4>SUBSCRIBE</h4>
+            <p>recive update, hot deals discount sent straitght in your bo</p>
+            <p>recive update, hot deals discount sent straitght in your bo</p>
+            <p>recive update, hot deals discount sent straitght in your box daily</p>
+            <br>
+            <a href="/" tabIndex="0"><img class="bn45" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="bn45"/></a>
+
+            <a href="/" tabIndex="0"><img class="bn46" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"alt="bn45"/></a>
+
+        </div>
+    </div>
+
+</footer>
+ 
+ <script>
+    let menu =document.querySelector('#menu-icon');
+let navmenu =document.querySelector('.navmenu');
+
+menu.onclick = () =>{
+    menu.classList.toggle('bx-x')
+    navmenu.classList.toggle('open')
+}
+ </script>
+    
+        
+
+</body>
+</html>
+    

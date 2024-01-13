@@ -1,0 +1,498 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+}
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10%;
+
+}
+.logo img{
+  max-width: 120px;
+  height: auto;
+}
+.navmenu{
+  display: flex;
+}
+.navmenu a{
+  color: #2c2c2c;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+.navmenu a:hover{
+  color: #ee1c47;
+}
+.nav-icon{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.nav-icon i{
+  margin-right: 20px;
+  color: #2c2c2c;
+  font-size: 25px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+/* add cart animation */
+
+.nav-icon span:not(.anime){
+  /* display: none; */
+
+}
+.nav-icon span .anime{
+  animation: count .4s ease-in-out;
+}
+@keyframes count{
+  from{
+    top: .2rem;
+    right: 1.8rem;
+    transform: rotate(120deg);
+  }
+  25%{
+    top: -.2rem;
+    right: -1.2rem;
+    transform: rotate(80deg);
+  }
+  50%{
+    top: -.4rem;
+    right: -.6rem;
+    transform: rotate(60deg);
+  }
+  75%{
+    top: -.4rem;
+    right: 0rem;
+    transform: rotate(30deg);
+  }
+  to{
+    top: .2rem;
+    right: .3rem;
+    transform: rotate(0deg);
+  }
+}
+/* add cart animation */
+.nav-icon span{
+  user-select: none;
+  position: absolute;
+  background: #ff4754;
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: .8rem;
+  border-radius:50% ;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: .2rem;
+  right:.3rem;
+
+}
+.nav-icon i:hover{
+  transform: scale(1.1);
+  color: #ee1c47;
+}
+#menu-icon{
+  font-size: 35px;
+  color: #2c2c2c;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+/* 
+sticky nav items */
+header.sticky{
+  background: #fff;
+  padding: 20px 10%;
+  box-shadow: 0px 0px 10px rgb(0 0 0 /10%);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* swiper js... */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* top rated section */
+
+.center-text h2{
+  color: #111;
+  font-size: 28px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.center-text span{
+  color: #ee1c47;
+}
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  gap:2rem ;
+}
+.row{
+  position: relative;
+  transition: all .40s;
+}
+.row img{
+  width: 88%;
+  height: auto;
+  transition: all .40s;
+}
+.row img:hover{
+  transform: scale(0.9);
+}
+.product-text h5{
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #27b737;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+.heart-icon{
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+.heart-icon:hover{
+  color: #ee1c47;
+}
+.ratting i{
+  color: #ff8c00;
+}
+.price h4{
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+}
+.price p{
+  color: #088178;
+  font-size: 15px;
+  font-weight: 600;
+  
+}
+.price a{
+  width:10rem;
+  
+  
+  border-radius: 50px;
+  /* background-color: #e8f6ea; */
+  font-weight: 500;
+   color: #088178; 
+  position: absolute;
+   bottom: 10px;
+  right: 10px;
+
+}
+.ban-img img{
+  width: 99%;
+}
+.exban{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+  background-image: url(./images/b1.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+.exban h4{
+  color: #fff;
+  font-size: 16px;
+
+}
+.exban h2{
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+
+
+}
+.exban h2 span{
+  color: #ee1c47;
+}
+
+
+
+@media (max-width:600px) {
+  .ban-img img{
+      width: 560px;
+  }
+  .exban{
+    height: 40vh;
+  }
+
+  
+}
+
+
+
+
+
+
+/* footer section */
+.bn46 {
+  width: 150px;
+  height: 50px;
+}
+.bn45 {
+  width: 170px;
+  height: 50px;
+}
+.contact{
+  background-color: #f3f4f6;
+}
+.contact-info{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,auto));
+  gap: 3rem;
+}
+.first-info{
+  width: 140px;
+  height: auto;
+}
+.contact-info h4{
+  color: #212529;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.contact-info p{
+  color: #565656;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all .42s;
+}
+.contact-info p:hover{
+  color: #ee1c47;
+}
+.social-icon i{
+  color: #565656;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all .42s;
+}
+.social-icon i:hover{
+  transform: scale(1.3);
+}
+
+.left-col{
+  float: left;
+  margin-left: 7%;
+   margin-bottom: 240px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-col h4{
+  padding-bottom: 15px;
+}
+.left-col h1{
+  color: #088178;
+}
+.left-col button{
+  background-color: transparent;
+  color: #088178;
+  border: 0;
+  padding: 14px 80px 14px 65px;
+  font-weight: 700;
+  font-size: 15px;
+
+}
+
+/* about slide */
+
+
+.features{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+.feature{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.featuretitle{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+}
+.featured-desription{
+  color: gray;
+  width: 50%;
+  height: 100px;
+
+}
+.featureicon{
+  width: 50px;
+  height: 50px;
+}
+/* about slide */
+
+/* news letter css */
+.news {
+  padding: 4.8px 0 9.6px 0;
+  text-align: center;
+}
+.news-heading {
+  font-size: 44px;
+  line-height: 1.4;
+
+  color: #333;
+}
+.news p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  margin-top: 12px;
+  line-height: 1.8;
+}
+
+input[type="email"] {
+  display: inline-block;
+  width: 60%;
+  padding: 18px 36px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 70px;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
+}
+input,
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 3;
+}
+
+.bt {
+  margin-left: -160px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 20px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  background-color: #48b774;
+  color: #fff;
+}
+
+
+
+
+
+/* nav res mediaquery */
+
+@media(max-width:750px){
+  .navmenu{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    height: 130vh;
+    background: #edfff1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 30px;
+    transition: all .42s ;
+  }
+  .navmenu a{
+    display: block;
+    margin: 18px 0;
+  }
+  .navmenu.open{
+    right: 0;
+  }
+  #menu-icon{
+    display: contents;
+  }
+  .features{
+    flex-direction: column;
+  }
+  #counter{
+    margin-right: 39px;
+    width: .8rem;
+    height: 1rem;
+  }
+
+  /* page header */
+/* 
+.hero1{
+  background-image: url(./images/b1.jpg);
+  /* width: 100%;
+  height: 40vh; */
+  background-repeat: no-repeat   ;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex; */
+}
+
+/* carrossel fin */ }
+/* .carousel-inner {
+  width: 50vw ; /* Adjust this value to change the width */
+  height: 500px; /* Adjust this value to change the height */
+  margin: auto; /* This will center the carousel if it's smaller than its container */
+}
+/* 
+.carousel-item img {
+  width: auto; /* This will make the image take the full width of .carousel-inner */
+  height: auto; /* This will make the image take the full height of .carousel-inner */
+  object-fit: cover; /* This will scale the image to cover the div without stretching */
+} */ */
+
+
